@@ -1,13 +1,37 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let seenNumbers = new Set();
+  for(let i = 0; i < array.length; i++) {
+    let currentElement = array[i];
+    let difference = target - currentElement
+    
+    
+    if(seenNumbers.has(difference)){
+      return true 
+    }
+  
+    seenNumbers.add(currentElement)
+  }
+  return false
 }
+
+
+
+/*
+finds if two numbers in an array equal to the sum
+*/
 
 /* 
   Write the Big O time complexity of your function here
+  O(n)
 */
 
 /* 
   Add your pseudocode here
+  for number in array:
+    difference = target - number
+    if(difference in array):
+      return true
+
 */
 
 /*
